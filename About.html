@@ -1,0 +1,136 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="Viewport" content="width=device-width, initial-scale=1.0"/>
+<link  rel="stylesheet" href="style.css" />
+<title>Logan Shires Work</title>
+</head>
+<body>
+     <div class="drawer-overlay" id="overlay"></div>
+
+    <!-- ─────────────────────────────────────────
+      TOP NAVIGATION BAR
+      Logo on the left, hamburger button on the right.
+ ───────────────────────────────────────── -->
+    <nav>
+      <div class="logo">Geo_<span>OS</span></div>
+      <!-- Three empty <span>s become the three bars of the ☰ icon -->
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ─────────────────────────────────────────
+      SIDE DRAWER MENU
+      Hidden off-screen by default. JS adds/removes
+      the .open class to slide it in and out.
+ ───────────────────────────────────────── -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-label">Navigation</div>
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Work.html">Work</a>
+    </div>
+    <div class="hero">
+    <h1>About Logan Shires</h1>
+    <p>Welcome to my portfolio! As you can see, I'm an artist and web developer, but I'm also a game developer, coder, and designer!</P>
+    <P>I'm a senior at Cal State East Bay, Majoring in Interaction and Game Design. On my free time I play video games and create art. </p>
+    <p>I'd consider myself a jack of all trades, and an avid problem solver in both irl and digital.</p>
+    <p>feel free to explore my work!</p>
+    <img src="files.png" alt="Zoe">
+    </div>
+     <section class="carousel-section">
+      <!-- Decorative "Gallery" divider line -->
+      <div class="divider"><span>Gallery</span></div>
+
+      <!-- .carousel-wrap clips the track so only one slide shows at a time -->
+      <div class="carousel-wrap">
+        <!-- .carousel-track is the full-width row of all slides.
+          JS moves it left/right by changing translateX. -->
+        <div class="carousel-track" id="track">
+          <!-- Each .slide is 100% wide, so slides line up side by side
+            and the wrapper only ever shows one at a time. -->
+
+          <!-- Slide 1 -->
+          <div class="slide">
+            <img
+              src="art/wholesome cave dwellers.png"
+              alt="Cave Dwellers"
+            />
+            <div class="slide-caption">
+              <h3>Cave Dwellers</h3>
+              <p>From a game I'm working on</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide">
+            <img
+              src="art/Archie the Beetle.png"
+              alt="Archie the Beetle"
+            />
+            <div class="slide-caption">
+              <h3>Archie the Beetle</h3>
+              <p>A Commission I did for a friend</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide">
+            <img
+              src="art/Get Dunked on Talon.png"
+              alt="Dunked on"
+            />
+            <div class="slide-caption">
+              <h3>Dunked on</h3>
+              <p>gift for a friend</p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slide">
+            <img
+              src="art/Siblings.png"
+              alt="Moths"
+            />
+            <div class="slide-caption">
+              <h3>Moths</h3>
+              <p>Art done of Minecraft Characters</p>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slide">
+            <img
+              src="art/Telly headless.png"
+              alt="Telly the TV"
+            />
+            <div class="slide-caption">
+              <h3>Telly the TV</h3>
+              <p>A Personal OC</p>
+            </div>
+          </div>
+        </div>
+        <!-- end .carousel-track -->
+
+        <!-- Prev / Next arrow buttons (positioned inside .carousel-wrap) -->
+        <button class="arrow arrow-prev" id="prev">&#8592;</button>
+        <button class="arrow arrow-next" id="next">&#8594;</button>
+      </div>
+      <!-- end .carousel-wrap -->
+
+      <!-- Dot indicators are injected here by JS -->
+      <div class="dots" id="dots"></div>
+
+      <!-- Slide counter e.g. "01 / 05", updated by JS -->
+      <div class="counter" id="counter">01 / 05</div>
+      
+      <h5>For more art, check out my Toyhouse  <button><a href="https://toyhou.se/Geo_Dominator" >Here!</a></button></h5>
+     
+
+    </section>
+     <script src="script.js"></script>
+</body>
+</html>

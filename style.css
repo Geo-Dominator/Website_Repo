@@ -1,0 +1,486 @@
+@import url("https://fonts.googleapis.com/css2?family=Tahoma:wght@400;700&display=swap"); /* Switch to Tahoma for XP feel */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --xp-blue-dark: #0054E3; /* XP gradient top */
+  --xp-blue-light: #A6CAF0; /* XP gradient bottom */
+  --xp-gray: #D4D0C8; /* Taskbar background */
+  --xp-white: #FFFFFF;
+  --xp-black: #000000;
+  --xp-green: #00A000; /* Start button accent */
+  --xp-shadow: rgba(0, 0, 0, 0.3); /* Subtle shadows */
+}
+
+body {
+  background: linear-gradient(to bottom, var(--xp-blue-dark), var(--xp-blue-light)); /* XP sky gradient */
+  color: var(--xp-black);
+  font-family: Tahoma, Arial, sans-serif; /* XP font */
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 40px; /* Space for taskbar */
+}
+
+/* Taskbar (moved back to top for visibility) */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px; /* Classic XP taskbar height */
+  background: linear-gradient(to bottom, var(--xp-gray), #B5B5B5); /* Taskbar gradient */
+  border-bottom: 1px solid #808080;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 16px; /* Increased for better visibility */
+  font-weight: bold;
+  color: var(--xp-white); /* Changed to white for contrast on gray background */
+  margin-right: 10px;
+}
+
+.logo span {
+  color: var(--xp-green); /* Accent for "OS" */
+}
+
+/* Start button (hamburger repurposed) */
+.hamburger {
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0); /* Button gradient */
+  border: 1px solid #808080;
+  border-radius: 2px;
+  padding: 2px 8px;
+  font-size: 11px;
+  color: var(--xp-black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 0 var(--xp-shadow);
+}
+
+.hamburger:hover {
+  background: linear-gradient(to bottom, #F0F0F0, #D0D0D0);
+}
+
+.hamburger span {
+  display: block; /* Show spans for animation */
+  width: 12px;
+  height: 1px;
+  background-color: var(--xp-black);
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+
+.hamburger.open {
+  opacity: 25;
+}
+
+
+/* Keep original hamburger animation, but style as XP button */
+.hamburger::before {
+  content: "Start"; /* Add "Start" text for clarity */
+}
+.drawer {
+  position: fixed;
+  top: 30px; /* Below taskbar */
+  right: 0;
+  width: 200px;
+  height: auto;
+  max-height: calc(100vh - 30px);
+  background: linear-gradient(to bottom, var(--xp-gray), #B5B5B5);
+  border: 1px solid #808080;
+  border-top: none;
+  box-shadow: 2px 2px 5px var(--xp-shadow);
+  transform: translateX(100%); /* Hidden off-screen */
+  transition: transform 0.3s ease;
+  padding: 5px;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 140;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.drawer nav-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer a {
+  font-size: 11px;
+  color: var(--xp-black);
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  background: none;
+  transition: background 0.2s;
+}
+
+.drawer a:hover {
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+  border: 1px inset #808080;
+}
+
+.drawer-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--xp-black);
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.hero {
+  padding: 20px;
+  margin: 20px;
+  background: var(--xp-white);
+  border: 1px solid #808080;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px var(--xp-shadow);
+  position: relative;
+}
+
+.hero::before {
+  content: "My Portfolio - Window"; /* Fake title bar */
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+  border: 1px solid #808080;
+  padding: 2px 5px;
+  font-size: 11px;
+  font-weight: bold;
+  width: calc(100% - 60px); /* Space for controls */
+}
+
+.hero h1 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--xp-green);
+}
+
+.hero p {
+  font-size: 12px;
+  margin-top: 10px;
+  color: var(--xp-black);
+}
+
+.hero ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hero li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--xp-black);
+  transition: all 0.2s;
+}
+
+.hero a::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  display: block;
+  background-image: url('folder.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
+}
+
+.hero a span {
+  font-size: 11px;
+  word-break: break-word;
+  max-width: 90px;
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+  border: 1px solid #808080;
+  padding: 2px 4px;
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero a:hover span {
+  background: linear-gradient(to bottom, #0054E3, #0043B0);
+  color: var(--xp-white);
+}
+.project-window {
+  padding: 20px;
+  margin: 20px;
+  background: var(--xp-white);
+  border: 1px solid #808080;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px var(--xp-shadow);
+  position: relative;
+}
+
+.project-window::before {
+  content: "Project of the Day - Window"; /* Fake title bar */
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+  border: 1px solid #808080;
+  padding: 2px 5px;
+  font-size: 11px;
+  font-weight: bold;
+  width: calc(100% - 60px); /* Space for controls */
+}
+
+.project-window h1 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.project-window img {
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+  height: auto;
+  border: 1px solid #808080;
+}
+
+.project-window p {
+  font-size: 12px;
+  margin-top: 10px;
+  color: var(--xp-black);
+}
+
+.project-window a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--xp-black);
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.project-window a::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  display: block;
+  background-image: url('folder.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
+}
+
+.project-window a span {
+  font-size: 11px;
+  word-break: break-word;
+  max-width: 90px;
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+  border: 1px solid #808080;
+  padding: 2px 4px;
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-window a:hover span {
+  background: linear-gradient(to bottom, #0054E3, #0043B0);
+  color: var(--xp-white);
+}
+.carousel-section {
+  padding: 20px;
+  margin: 20px;
+  background: var(--xp-white);
+  border: 1px solid #808080;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px var(--xp-shadow);
+}
+
+.carousel-section::before {
+  content: "Projects - Window";
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+  border: 1px solid #808080;
+  padding: 2px 5px;
+  font-size: 11px;
+  font-weight: bold;
+  width: calc(100% - 80px);
+}
+.carousel-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.65s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.slide {
+  min-width: 100%;
+  position: relative;
+  height: clamp(340px, 60vh, 620px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+.slide img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: sepia(12%) contrast(1.05);
+  transition: transform 0.8s ease;
+}
+.slide:hover img {
+  transform: scale(1.02);
+}
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2rem 1.5rem;
+  background: linear-gradient(
+    to top rgba(26, 18, 8, 0.75) 0%,
+    transparent 100%
+  );
+  color: var(--cream);
+}
+.slide-caption h3 {
+  color: var(--xp-black);
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.slide-caption p {
+  color: var(--xp-black);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  margin-top: 0.2rem;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+  border: 1px solid #808080;
+  border-radius: 0;
+  color: var(--xp-black);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 0 var(--xp-shadow);
+  transition: background 0.2s;
+}
+
+.arrow:hover {
+  background: linear-gradient(to bottom, #F0F0F0, #D0D0D0);
+}
+
+.arrow-prev {
+  left: 5px;
+}
+
+.arrow-next {
+  right: 5px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #C0C0C0;
+  cursor: pointer;
+  border: 1px solid #808080;
+  transition: background-color 0.25s;
+}
+
+.dot.active {
+  background-color: var(--xp-green);
+}
+.counter {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--xp-black);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  margin: 10px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #808080;
+}
+
+.divider span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--xp-black);
+  font-weight: bold;
+}
