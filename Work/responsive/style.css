@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.box{
+    background-color:  #3498bd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 100%;
+}
+@media (min-width: 600px){
+    .box{
+        flex: 1 1 calc(50% - 10px);
+        background-color: #2ecc71;
+    }
+}
+@media (min-width: 1000px){
+    .box{
+        flex: 1 1 calc(333.33% - 10px);
+        background-color: #9b59b6;
+    }
+}

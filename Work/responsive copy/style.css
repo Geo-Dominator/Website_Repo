@@ -1,0 +1,58 @@
+:root{
+    --primary-bg: #f0f2f5;
+    --accent-color: #4f465e;
+    --sidebar-width: 240px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    background-color: var(--primary-bg);
+}
+
+aside{
+    width: var(--sidebar-width);
+    background-color: #1e293b;
+    color: white;
+    height: 100vh;
+    position:sticky;
+    top:0;
+    display: none;
+}
+main{
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 1.5rem;
+}
+
+.card{
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    border-left: 5px solid var(--accent-color);
+}
+@media (min-width: 768px){
+    aside {
+        display: block;
+    }
+}
+@media (min-width: 1200px){
+    main{
+        padding: 4rem;
+    }
+    .dashboard-grid{
+        gap:2.5rem;
+    }
+}

@@ -1,0 +1,24 @@
+body{
+    transition: all 0.5s;
+    display: flex;
+    flex-direction:  column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#quote-text{
+    font-size: 48px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#curate-btn{
+    width: 200px;
+    height: 80px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #780000;
+    color: white;
+    border-radius: 8px;
+    border: none;
+}

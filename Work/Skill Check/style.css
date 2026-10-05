@@ -1,0 +1,32 @@
+.flex-container{
+    background-color: white;
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* flex direction: row | column | row reverse | column-reverse... just refer to the slides */
+    flex-wrap: wrap;
+    /* nonwrap | wrap | wrap-reverse */
+    justify-content: center;
+    /* flex start | flex-end | center | space-between | spece evenly */
+    align-items: center;
+    /* stretch | flex-start | flex-end | center | baseline */
+    align-content: center;
+    /* flex-start | flex-end | space-between | space around | stretch | center */
+    align-self: center;
+    column-gap: 60px;
+    flex-basis: auto;
+    box-shadow: gray 5px 5px 20px;
+}
+
+.flex-item{
+    background-color: rgb(23, 137, 230);
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
