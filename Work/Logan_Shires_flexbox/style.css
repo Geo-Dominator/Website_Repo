@@ -1,0 +1,54 @@
+
+.services-container {
+   display: flex;
+   flex-wrap: nowrap;
+   gap: 40px; 
+   justify-content: space-evenly; 
+   align-items: baseline;
+   align-content: center;
+   width: 90%;
+   text-align: center;
+   padding: 20px;
+   background-color: #f4f7f6; 
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+
+.service-card {
+   
+   flex: 1 1 25px;
+   height: 250px;
+   width: 250px;
+   background-color: white; 
+   text-align: center;
+   line-height: 30px; 
+   font-size: 1.2em;
+   border-radius: 8px;
+   box-shadow:2px 2px 2px lightgray;
+}
+
+.button {
+
+   background-color: black;
+   color: white;
+   padding: 10px 20px;
+   border:none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.service-card:nth-child(odd) {
+   
+   border-top:5px solid #2ecc71; 
+}
+.service-card:nth-child(even) {
+   
+   border-top:5px solid #3498db; 
+}
+
+.service-card:hover {
+   transform: translateY(-10px);
+   background-color: #fffdf9;
+   box-shadow:4px 4px 8px lightgray;
+   transition: transform 0.3s;
+}

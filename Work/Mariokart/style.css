@@ -1,0 +1,82 @@
+html, body{
+    height:100%;
+    width: 100%;
+    margin:0;
+    overflow:hidden;
+}
+
+.sky, .grass, .road{
+    position:relative;
+}
+
+.sky{
+    height: 40%;
+    background-color: skyblue;
+}
+
+.grass{
+    height: 30%;
+    background-color: seagreen;
+}
+
+.road{
+    height: 30%;
+    background-color: dimgray;
+    box-sizing: border-box;
+}
+
+.lines{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
+
+.mario{
+    position: absolute;
+    top: -40%;
+    left: 0px;
+    animation: drive 3s both infinite linear, jump 0.5s 1.5s ease;
+}
+
+.luigi{
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    animation: drive 5s both infinite linear;
+}
+
+.cloud{
+    position: absolute;
+}
+
+.cloud:nth-child(1){
+    width: 200px;
+    top: 120px;
+    opacity: 0.5;
+    animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2){
+    width: 300px;
+    top: 0;
+    animation: wind 50s linear infinite normal;
+}
+
+@keyframes drive{
+    from {transform:translateX(-100px)}
+    to {transform:translateX(1440px)}
+}
+
+@keyframes wind{
+    from {left: -300px;}
+    to {left: 100px;}
+}
+
+@keyframes jump{
+    0% {top:-40%;}
+    50% {top:-300px;}
+    100% {top:-40%;}
+}

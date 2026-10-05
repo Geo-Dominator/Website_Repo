@@ -1,0 +1,28 @@
+
+
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="Viewport" content="width=device-width, initial-scale=1.0"/>
+<link  rel="stylesheet" href="style.css" />
+<title>The Pixel Perk | Tech & Coffee</title>
+</head>
+<body>
+    <header id="api-banner">
+        <p>loading today's tech-brew...</p>
+    </header>
+    <nav class="filters">
+        <button onclick="filterMenu('all')">All Items</button>
+        <button onclick="filterMenu('drink')">Drinks</button>
+        <button onclick="filterMenu('food')">Byte-Sized Snacks</button>
+    </nav>
+    <main id="menu-grid"></main>
+
+    <section id="favorites-section">
+        <h2>Your Saved Orders</h2>
+        <div id="fav-list"></div>
+        <button id="clear-favs">Reset Favorites</button>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="Viewport" content="width=device-width, initial-scale=1.0"/>
+<link  rel="stylesheet" href="style.css" />
+<title>Moodboard</title>
+</head>
+<body>
+    <header>
+        <h1>Inspiration Generator</h1>
+        <button id="fetch-btn">Get New Inspiration</button>
+    </header>
+    <main>
+        <section id="current-inspo">
+            <div id="image-container">
+                <p>Click the button to start...</p>
+            </div>
+            <button id="save-btn" style="display: none">
+                Save to the Mood Board
+            </button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>My Saved Mood Board</h2>
+            <div id="saved-items"></div>
+            <button id="clear-btn">Clear All</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
