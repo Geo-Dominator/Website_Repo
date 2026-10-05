@@ -1,0 +1,40 @@
+.flex-container{
+    background-color: plum;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    /* flex direction: row | column | row reverse | column-reverse... just refer to the slides */
+    flex-wrap: wrap;
+    /* nonwrap | wrap | wrap-reverse */
+    justify-content: center;
+    /* flex start | flex-end | center | space-between | spece evenly */
+    align-items: center;
+    /* stretch | flex-start | flex-end | center | baseline */
+    align-content: space-around;
+    /* flex-start | flex-end | space-between | space around | stretch | center */
+    align-self: center;
+    column-gap: 60px;
+    flex-basis: auto;
+}
+
+.flex-item{
+    background-color: rgb(234, 205, 224);
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: rgb(255, 80, 179);
+}
+.flex-item:nth-child(1){
+    order: 8;
+}
+.flex-item:nth-child(2){
+    order: 3;
+}
+.flex-item:nth-child(3){
+    order: 7;
+}

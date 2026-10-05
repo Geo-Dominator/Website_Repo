@@ -1,0 +1,84 @@
+
+
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="Viewport" content="width=device-width, initial-scale=1.0"/>
+<link  rel="stylesheet" href="style.css" />
+<title>Gallery</title>
+</head>
+<body>
+    <div class="drawer-overlay" id="overlay"></div>
+
+    <nav>
+        <div class="logo">Lumi<span>ere</span></div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="drawer" id="drawer">
+        <div class="drawer-label">Navigation</div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <header class="hero">
+        <h1>A<em>Visual</em><br>Journey</h1>
+        <p>Five Frames. Infinite Stories</p>
+    </header>
+
+    <section class="carousel-section">
+        <div class="divider"><span>Gallery</span></div>
+        <div class="carousel-wrap">
+            <div class="carousel-track" id="track">
+                <div class="slide">
+                    <img src="Images/Landscape.jpg" alt="Mountain Magesty">
+                    <div class="slide-caption">
+                        <h3>Above the clouds</h3>
+                        <p>Majestic Mountain Range</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Images/Forest.jpg" alt="Forest Farlands">
+                    <div class="slide-caption">
+                        <h3>The Quiet Path</h3>
+                        <p>Ancient Forest Clearing</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Images/Desert.jpg" alt="Desert Dunes">
+                    <div class="slide-caption">
+                        <h3>Shifting Sands</h3>
+                        <p>Sun Scourched Wasteland</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Images/Ocean.jpg" alt="Collosal Coastline">
+                    <div class="slide-caption">
+                        <h3>Golden Hour</h3>
+                        <p>Sparkling Coastline</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Images/Northern-lights.jpg" alt="Northern Nightlight">
+                    <div class="slide-caption">
+                        <h3>Auroa Borealis</h3>
+                        <p>At the Edge of the World</p>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow arrow-prev" id="prev">&#8592;</button>
+            <button class="arrow arrow-next" id="next">&#8594;</button>
+        </div>
+        
+        <div class="dots" id="dots"></div>
+        <div class="counter" id="counter">01/05</div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
